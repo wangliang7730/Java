@@ -1,4 +1,12 @@
-public double weibull(double x,double i,double k){	 
-		double wb=(java.lang.Math.pow(k, -1*i))*i*(java.lang.Math.pow(x, (i-1)))*(java.lang.Math.pow(Math.E, -(java.lang.Math.pow((x/k), i))));
- 		return wb;
-	}
+public double weibull_pdf(double x, double i, double k)
+		{
+			double wb = (Math.Pow(k, -1 * i)) * i * (Math.Pow(x, (i - 1))) * (Math.Pow(Math.E, -(Math.Pow((x / k), i))));
+			return wb;
+		}
+		
+public double weibull_cdf(double x, double i, double k)
+{
+	double b = -Math.Pow(x / i, k);
+	double cdf = 1 - Math.Pow(Math.E, b);
+	return cdf;
+}
